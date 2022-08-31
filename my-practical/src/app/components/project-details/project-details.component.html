@@ -1,0 +1,81 @@
+<h1>Project Details</h1>
+<form [formGroup]="form">
+    <mat-grid-list cols="2" rowHeight="4:1">
+        <mat-grid-tile>
+            <mat-label>Organisation</mat-label>
+            <mat-form-field appearance="fill">
+
+                <mat-select matNativeControl formControlName="Organisation" required>
+
+                    <mat-option [value]="1">Apple</mat-option>
+                    <mat-option [value]="2">Google</mat-option>
+                    <mat-option [value]="3">Microsoft</mat-option>
+
+                </mat-select>
+
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-label>Category</mat-label>
+            <mat-form-field appearance="fill">
+
+                <mat-select matNativeControl formControlName="Category" required>
+
+                    <mat-option [value]="1">PM</mat-option>
+                    <mat-option [value]="2">Dev</mat-option>
+                    <mat-option [value]="3">QA</mat-option>
+
+                </mat-select>
+
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-label>Activity</mat-label>
+            <mat-form-field appearance="fill">
+                <mat-select matNativeControl formControlName="Activity" required>
+
+                    <mat-option [value]="1">Project Management</mat-option>
+                    <mat-option [value]="2">Software Development</mat-option>
+                    <mat-option [value]="3">Quality Assurance</mat-option>
+
+                </mat-select>
+
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-label>Title</mat-label>
+            <mat-form-field appearance="fill">
+
+                <input matInput formControlName="Title" required>
+
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-label>Minimum Age</mat-label>
+            <mat-form-field appearance="fill">
+
+                <input matInput formControlName="Minimum" required>
+
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-label>Maximum Age</mat-label>
+            <mat-form-field appearance="fill">
+
+                <input matInput formControlName="Maximum" required>
+
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-label>Overview Description</mat-label>
+            <mat-form-field appearance="fill">
+
+                <input matInput formControlName="Description" required>
+
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+   
+    <button mat-flat-button matStepperNext color="warn" type="button" (ngSubmit)="saveDetails(form)">Next</button>
+</form>

@@ -1,0 +1,51 @@
+<h1>Project Includes Check</h1>
+<form [formGroup]="form">
+    <mat-label>Project Name</mat-label>
+    <mat-form-field appearance="fill">
+
+        <mat-select matNativeControl formControlName="projectname" required>
+
+            <mat-option [value]="1">Kishan123</mat-option>
+            <mat-option [value]="2">Gap22</mat-option>
+            <mat-option [value]="3">Techno</mat-option>
+
+        </mat-select>
+
+    </mat-form-field>
+    <mat-grid-list cols="2" rowHeight="4:1">
+        <ng-container>
+        <mat-grid-tile>
+            <mat-label>Include Description</mat-label>
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="Include Description">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-label>Include or Not</mat-label>
+            <mat-radio-group>
+                <mat-radio-button  name="include" value="Include">Include</mat-radio-button>
+                <mat-radio-button name="include" value="Not Include">Not Include</mat-radio-button>
+            </mat-radio-group>
+        </mat-grid-tile>
+    </ng-container>
+
+    <ng-container *ngFor="let row of rows">
+        <mat-grid-tile>
+            <mat-label>Include Description</mat-label>
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="Include Description">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-label>Include or Not</mat-label>
+            <mat-radio-group>
+                <mat-radio-button  name="include" value="Include">Include</mat-radio-button>
+                <mat-radio-button name="include" value="Not Include">Not Include</mat-radio-button>
+            </mat-radio-group>
+        </mat-grid-tile>
+        <button mat-flat-button color="warn" type="button" (click)="deleteRow()">Delete</button>
+    </ng-container>
+    </mat-grid-list>
+    <button mat-flat-button class="add-row" color="warn" type="button" (click)="addRows()">Add Row</button>
+</form>
+<button mat-flat-button matStepperNext color="warn" type="button">Next</button>

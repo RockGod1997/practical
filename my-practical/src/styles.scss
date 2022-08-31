@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: aqua; }
+.mat-grid-tile-content{
+    flex-direction: column;
+    align-items: flex-start !important;
+}
+
+.mat-form-field{
+    width: -webkit-fill-available;
+    color: black !important;
+}
+
+.mat-flat-button{
+    position: relative;
+    left: 90% !important;
+}
+
+.add-row{
+    position: relative !important;
+    width: -webkit-fill-available;
+    left: auto !important;
+    margin-bottom: 10px !important;
+}

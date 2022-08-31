@@ -1,0 +1,28 @@
+<h1>Project Gallery</h1>
+<form [formGroup]="form1">
+    <mat-grid-list cols="2" rowHeight="4:1">
+        <mat-grid-tile>
+            <mat-label>Project Name</mat-label>
+            <mat-form-field appearance="fill">
+
+                <mat-select matNativeControl formControlName="projectname" required>
+
+                    <mat-option [value]="1">Kishan123</mat-option>
+                    <mat-option [value]="2">GAP22</mat-option>
+                    <mat-option [value]="3">Techno</mat-option>
+
+                </mat-select>
+
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-label>Project Images</mat-label>
+
+            <button mat-flat-button color="warn" type="button" (click)="fileInput.click()">Upload</button>
+            <input hidden type="file" (change)="onFileSelection($event)" #fileInput id="file">
+            <span class="file">{{file}}</span>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</form>
+<button mat-flat-button matStepperNext color="warn" type="button" (ngSubmit)="saveDetails(form1)">Next</button>

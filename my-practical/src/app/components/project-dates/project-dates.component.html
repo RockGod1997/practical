@@ -1,0 +1,46 @@
+<h1>Project Dates</h1>
+<form [formGroup]="form">
+    <mat-label>Project Name</mat-label>
+    <mat-form-field appearance="fill">
+
+        <mat-select matNativeControl formControlName="projectname" required>
+
+            <mat-option [value]="1">Kishan123</mat-option>
+            <mat-option [value]="2">Gap22</mat-option>
+            <mat-option [value]="3">Techno</mat-option>
+
+        </mat-select>
+
+    </mat-form-field>
+    <mat-grid-list cols="1" rowHeight="4:1">
+        <ng-container>
+        <mat-grid-tile>
+            <mat-label>Project Start Date</mat-label>
+            <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill">
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>{{date}}</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker startView="year" [startAt]="date"></mat-datepicker>
+                  </mat-form-field>
+            </mat-form-field>
+        </mat-grid-tile>
+       
+    </ng-container>
+
+    <ng-container *ngFor="let row of rows">
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>{{date}}</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker startView="year" [startAt]="date"></mat-datepicker>
+              </mat-form-field>
+        </mat-grid-tile>
+        <button mat-flat-button color="warn" type="button" (click)="deleteRow()">Delete</button>
+    </ng-container>
+    </mat-grid-list>
+    <button mat-flat-button class="add-row" color="warn" type="button" (click)="addRows()">Add Row</button>
+</form>
+
+<button mat-button matStepperNext mat-flat-button color="warn" type="button">Finish</button>
